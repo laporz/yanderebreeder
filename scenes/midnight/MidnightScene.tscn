@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/midnight/MidnightScene.gd" id="1"]
+
+[node name="MidnightScene" type="Node"]
+script = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SceneTitle" type="Label" parent="CanvasLayer/VBox"]
+text = "🌑 深夜のひととき"
+theme_override_font_sizes/font_size = 24
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/VBox"]
+text = ""
+theme_override_font_sizes/font_size = 14
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/VBox"]
+text = ""
+theme_override_colors/font_color = Color(0.9, 0.4, 0.6, 1)
+
+[node name="BodyPanel" type="VBoxContainer" parent="CanvasLayer/VBox"]
+
+[node name="BodyLabel" type="Label" parent="CanvasLayer/VBox/BodyPanel"]
+text = "体のどこに触れますか？"
+
+[node name="HeadButton" type="Button" parent="CanvasLayer/VBox/BodyPanel"]
+text = "頭（快感 +5 / 好感 +2）"
+
+[node name="ChestButton" type="Button" parent="CanvasLayer/VBox/BodyPanel"]
+text = "胸（快感 +10）"
+
+[node name="StomachButton" type="Button" parent="CanvasLayer/VBox/BodyPanel"]
+text = "お腹（快感 +8）"
+
+[node name="GroinButton" type="Button" parent="CanvasLayer/VBox/BodyPanel"]
+text = "性器（快感 +15）"
+
+[node name="EndButton" type="Button" parent="CanvasLayer/VBox/BodyPanel"]
+text = "イベント終了 → 翌日へ"
+
+[node name="InsertPanel" type="VBoxContainer" parent="CanvasLayer/VBox"]
+visible = false
+
+[node name="InsertLabel" type="Label" parent="CanvasLayer/VBox/InsertPanel"]
+text = "絶頂…。挿入しますか？"
+
+[node name="InsertCondomButton" type="Button" parent="CanvasLayer/VBox/InsertPanel"]
+text = "コンドームをつけて挿入"
+
+[node name="InsertNoCondomButton" type="Button" parent="CanvasLayer/VBox/InsertPanel"]
+text = "コンドームなしで挿入（好感度100・依存度80必要）"
+
+[node name="InsertBackButton" type="Button" parent="CanvasLayer/VBox/InsertPanel"]
+text = "← 戻る"
+
+[node name="CumPanel" type="VBoxContainer" parent="CanvasLayer/VBox"]
+visible = false
+
+[node name="CumLabel" type="Label" parent="CanvasLayer/VBox/CumPanel"]
+text = "射精する場所を選んでください。"
+
+[node name="CumFaceButton" type="Button" parent="CanvasLayer/VBox/CumPanel"]
+text = "顔（依存度 +3）"
+
+[node name="CumMouthButton" type="Button" parent="CanvasLayer/VBox/CumPanel"]
+text = "口（依存度 +5）"
+
+[node name="CumBodyButton" type="Button" parent="CanvasLayer/VBox/CumPanel"]
+text = "体（依存度 +2）"
+
+[node name="CumInsideButton" type="Button" parent="CanvasLayer/VBox/CumPanel"]
+text = "腟内（依存度 +10 / コンドーム時 +2）"
+
+[connection signal="pressed" from="CanvasLayer/VBox/BodyPanel/HeadButton" to="." method="_on_head_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/BodyPanel/ChestButton" to="." method="_on_chest_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/BodyPanel/StomachButton" to="." method="_on_stomach_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/BodyPanel/GroinButton" to="." method="_on_groin_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/BodyPanel/EndButton" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/InsertPanel/InsertCondomButton" to="." method="_on_insert_condom_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/InsertPanel/InsertNoCondomButton" to="." method="_on_insert_no_condom_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/InsertPanel/InsertBackButton" to="." method="_on_insert_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/CumPanel/CumFaceButton" to="." method="_on_cum_face_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/CumPanel/CumMouthButton" to="." method="_on_cum_mouth_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/CumPanel/CumBodyButton" to="." method="_on_cum_body_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/CumPanel/CumInsideButton" to="." method="_on_cum_inside_pressed"]

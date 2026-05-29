@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/morning/MorningScene.gd" id="1"]
+
+[node name="MorningScene" type="Node"]
+script = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SceneTitle" type="Label" parent="CanvasLayer/VBox"]
+text = "🌅 朝のひととき"
+theme_override_font_sizes/font_size = 24
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/VBox"]
+text = ""
+theme_override_font_sizes/font_size = 14
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/VBox"]
+text = ""
+theme_override_colors/font_color = Color(0.9, 0.4, 0.6, 1)
+
+[node name="MainPanel" type="VBoxContainer" parent="CanvasLayer/VBox"]
+
+[node name="TalkButton" type="Button" parent="CanvasLayer/VBox/MainPanel"]
+text = "💬 会話する"
+
+[node name="TouchButton" type="Button" parent="CanvasLayer/VBox/MainPanel"]
+text = "🤝 ふれあう"
+
+[node name="StatusButton" type="Button" parent="CanvasLayer/VBox/MainPanel"]
+text = "📊 ステータス確認"
+
+[node name="ConvPanel" type="VBoxContainer" parent="CanvasLayer/VBox"]
+visible = false
+
+[node name="ConvLabel" type="Label" parent="CanvasLayer/VBox/ConvPanel"]
+text = "どう話しかけますか？"
+
+[node name="ConvSuccessButton" type="Button" parent="CanvasLayer/VBox/ConvPanel"]
+text = "A: 気持ちを正直に伝える（成功）"
+
+[node name="ConvNormalButton" type="Button" parent="CanvasLayer/VBox/ConvPanel"]
+text = "B: 普通に挨拶する（普通）"
+
+[node name="ConvFailButton" type="Button" parent="CanvasLayer/VBox/ConvPanel"]
+text = "C: 変なことを言ってしまう（失敗）"
+
+[node name="ConvBackButton" type="Button" parent="CanvasLayer/VBox/ConvPanel"]
+text = "← 戻る"
+
+[node name="TouchPanel" type="VBoxContainer" parent="CanvasLayer/VBox"]
+visible = false
+
+[node name="TouchLabel" type="Label" parent="CanvasLayer/VBox/TouchPanel"]
+text = "どこに触れますか？"
+
+[node name="TouchBackButton" type="Button" parent="CanvasLayer/VBox/TouchPanel"]
+text = "← 戻る"
+
+[connection signal="pressed" from="CanvasLayer/VBox/MainPanel/TalkButton" to="." method="_on_talk_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/MainPanel/TouchButton" to="." method="_on_touch_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/MainPanel/StatusButton" to="." method="_on_status_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/ConvPanel/ConvSuccessButton" to="." method="_on_conv_success_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/ConvPanel/ConvNormalButton" to="." method="_on_conv_normal_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/ConvPanel/ConvFailButton" to="." method="_on_conv_fail_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/ConvPanel/ConvBackButton" to="." method="_on_conv_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBox/TouchPanel/TouchBackButton" to="." method="_on_touch_back_pressed"]
