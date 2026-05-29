@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Status System</title>
+
+<style>
+  body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; margin: 2rem; max-width: 1100px; }
+  h1 { border-bottom: 3px solid #e7a7c5; padding-bottom: .25rem; }
+  h2 { margin-top: 2rem; border-left: 6px solid #e7a7c5; padding-left: .6rem; }
+  h3 { margin-top: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: .55rem .7rem; vertical-align: top; }
+  th { background: #fff0f6; text-align: left; }
+  code { background: #f7f7f7; padding: .1rem .3rem; border-radius: 4px; }
+  .note { background: #fff8fb; border: 1px solid #f0c8da; padding: 1rem; border-radius: 8px; }
+</style>
+
+</head>
+<body>
+<h1>Status System</h1>
+
+<section id="player-status">
+  <h2>プレイヤー</h2>
+  <p>現時点では固有ステータスなし。</p>
+</section>
+
+<section id="affection">
+  <h2>好感度</h2>
+  <p>範囲: 0〜100</p>
+  <p>主に会話で上昇する。20刻みで状態が変化し、会話内容も変化する。</p>
+
+  <table>
+    <thead>
+      <tr><th>範囲</th><th>状態</th><th>仕様メモ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0〜19</td><td>初対面でよそよそしい</td><td>選択可能なふれあい部位は少ない。</td></tr>
+      <tr><td>20〜39</td><td>慣れてきた</td><td>会話とふれあいの選択肢が少し増える。</td></tr>
+      <tr><td>40〜59</td><td>仲良し</td><td>より親しい反応に変化する。</td></tr>
+      <tr><td>60〜79</td><td>気になる人</td><td>親密な選択肢が増える。</td></tr>
+      <tr><td>80〜99</td><td>ラブラブ</td><td>最も親密な状態。</td></tr>
+      <tr><td>100</td><td>貴方しか見えない</td><td>愛情限界突破状態。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="lust">
+  <h2>淫乱度</h2>
+  <p>範囲: 0〜100</p>
+  <p>主にふれあいで胸、お腹、性器を触れられた時に上昇する。</p>
+</section>
+
+<section id="dependency">
+  <h2>依存度</h2>
+  <p>範囲: 0〜100</p>
+  <p>主にMidnightSceneで上昇する。</p>
+</section>
+
+<section id="pleasure">
+  <h2>快感度</h2>
+  <p>範囲: 0〜500</p>
+  <p>ふれあいで上昇する。100ごとに絶頂を迎える。</p>
+
+  <h3>翌日の初期値</h3>
+  <p>淫乱度により、翌日の快感度初期値が変化する。</p>
+
+  <table>
+    <thead>
+      <tr><th>淫乱度</th><th>翌日の快感度初期値</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>0〜20</td><td>0</td></tr>
+      <tr><td>21〜40</td><td>20</td></tr>
+      <tr><td>41〜60</td><td>40</td></tr>
+      <tr><td>61〜80</td><td>60</td></tr>
+      <tr><td>81〜100</td><td>80</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">元ファイルでは「81〜1000」と記載されていたため、ここではステータス上限に合わせて「81〜100」に補正。</p>
+</section>
+</body>
+</html>

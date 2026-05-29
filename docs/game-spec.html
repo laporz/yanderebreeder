@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Game Spec</title>
+
+<style>
+  body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; margin: 2rem; max-width: 1100px; }
+  h1 { border-bottom: 3px solid #e7a7c5; padding-bottom: .25rem; }
+  h2 { margin-top: 2rem; border-left: 6px solid #e7a7c5; padding-left: .6rem; }
+  h3 { margin-top: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: .55rem .7rem; vertical-align: top; }
+  th { background: #fff0f6; text-align: left; }
+  code { background: #f7f7f7; padding: .1rem .3rem; border-radius: 4px; }
+  .note { background: #fff8fb; border: 1px solid #f0c8da; padding: 1rem; border-radius: 8px; }
+</style>
+
+</head>
+<body>
+<h1>Game Spec</h1>
+
+<section id="overview">
+  <h2>概要</h2>
+  <p>Godotで制作するシーン切り替え型ADVゲーム。</p>
+  <p>開発にはClaude Codeを使用する。</p>
+  <p>ヒロインとのやりとりを通じて、エンディングが3種類に分岐する。</p>
+</section>
+
+<section id="development-stack">
+  <h2>Development Stack</h2>
+  <table>
+    <tbody>
+      <tr><th>Engine</th><td>Godot</td></tr>
+      <tr><th>Genre</th><td>シーン切り替え型ADV</td></tr>
+      <tr><th>Development Assistant</th><td>Claude Code</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="core-loop">
+  <h2>基本ループ</h2>
+  <ol>
+    <li>MorningSceneで会話、ふれあい、ステータス確認を行う。</li>
+    <li>何らかの数値変動、または会話の失敗があった場合、次のシーンへ遷移する。</li>
+    <li>NightSceneで買い物、食事、会話、ふれあい、就寝を行う。</li>
+    <li>条件を満たすとMidnightSceneへ遷移する。</li>
+    <li>就寝後、翌日またはエンディング判定へ進む。</li>
+  </ol>
+</section>
+
+<section id="ending">
+  <h2>エンディング</h2>
+  <p>ヒロインとのやりとりによって、エンディングが3種類に分岐する。</p>
+  <p class="note">具体的な分岐条件は未定義。今後、好感度・依存度・日数・購入済みアイテムなどを使って設計する。</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Scene Flow</title>
+
+<style>
+  body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; margin: 2rem; max-width: 1100px; }
+  h1 { border-bottom: 3px solid #e7a7c5; padding-bottom: .25rem; }
+  h2 { margin-top: 2rem; border-left: 6px solid #e7a7c5; padding-left: .6rem; }
+  h3 { margin-top: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: .55rem .7rem; vertical-align: top; }
+  th { background: #fff0f6; text-align: left; }
+  code { background: #f7f7f7; padding: .1rem .3rem; border-radius: 4px; }
+  .note { background: #fff8fb; border: 1px solid #f0c8da; padding: 1rem; border-radius: 8px; }
+</style>
+
+</head>
+<body>
+<h1>Scene Flow</h1>
+
+<section id="basic-flow">
+  <h2>基本遷移</h2>
+  <pre>
+TitleScene
+  ↓
+MorningScene
+  ↓ 条件: 数値変動または会話失敗
+NightScene
+  ↓ 条件: 寝る
+NextDay / EndingCheck
+  ↓
+MorningScene
+  </pre>
+</section>
+
+<section id="conditional-flow">
+  <h2>条件付き遷移</h2>
+  <table>
+    <thead>
+      <tr><th>現在シーン</th><th>条件</th><th>遷移先</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>MorningScene</td><td>数値変動、または会話失敗</td><td>NightScene</td></tr>
+      <tr><td>NightScene</td><td>寝るを選択</td><td>翌日処理</td></tr>
+      <tr><td>NightScene</td><td>ふれあい時に快感度が50を超えている</td><td>MidnightScene</td></tr>
+      <tr><td>MidnightScene</td><td>イベント終了</td><td>翌日処理、またはNightSceneへ戻る。詳細は未定義。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="ending-flow">
+  <h2>エンディング分岐</h2>
+  <p>エンディングは3種類。</p>
+  <p class="note">現時点では具体的な判定条件が未定義。今後、好感度・依存度・淫乱度・購入済みアイテム・日数などから分岐条件を設計する。</p>
+</section>
+</body>
+</html>
