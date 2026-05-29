@@ -1,32 +1,64 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scenes/title/TitleScene.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/components/SavePanel.tscn" id="2"]
 
 [node name="TitleScene" type="Node"]
 script = ExtResource("1")
 
+[node name="SavePanel" parent="." instance=ExtResource("2")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBox" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color(0.08, 0.05, 0.1, 1)
+
+[node name="Center" type="CenterContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/Center"]
+custom_minimum_size = Vector2(520, 0)
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/VBox"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Center/VBox"]
 text = "ヤンデレブリーダー"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(0.95, 0.75, 0.85, 1)
 
-[node name="SubLabel" type="Label" parent="CanvasLayer/VBox"]
+[node name="SubLabel" type="Label" parent="CanvasLayer/Center/VBox"]
 text = "— ヒロインとの日常をすごそう —"
 horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.8, 0.65, 0.75, 1)
+
+[node name="Spacer1" type="Control" parent="CanvasLayer/Center/VBox"]
+custom_minimum_size = Vector2(0, 60)
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Center/VBox"]
+text = "　ゲームスタート　"
+custom_minimum_size = Vector2(0, 56)
+theme_override_font_sizes/font_size = 22
+
+[node name="Spacer2" type="Control" parent="CanvasLayer/Center/VBox"]
+custom_minimum_size = Vector2(0, 12)
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/Center/VBox"]
+text = "　続きから（オートセーブ）　"
+custom_minimum_size = Vector2(0, 48)
 theme_override_font_sizes/font_size = 18
 
-[node name="Spacer" type="Control" parent="CanvasLayer/VBox"]
-custom_minimum_size = Vector2(0, 40)
+[node name="Spacer3" type="Control" parent="CanvasLayer/Center/VBox"]
+custom_minimum_size = Vector2(0, 8)
 
-[node name="StartButton" type="Button" parent="CanvasLayer/VBox"]
-text = "ゲームスタート"
-size_flags_horizontal = 4
+[node name="LoadButton" type="Button" parent="CanvasLayer/Center/VBox"]
+text = "　セーブデータをロード　"
+custom_minimum_size = Vector2(0, 48)
+theme_override_font_sizes/font_size = 18
 
-[connection signal="pressed" from="CanvasLayer/VBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Center/VBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Center/VBox/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Center/VBox/LoadButton" to="." method="_on_load_button_pressed"]

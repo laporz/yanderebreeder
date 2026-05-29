@@ -11,13 +11,24 @@ config_version=5
 [application]
 
 config/name="yanderebreeder"
+run/main_scene="res://scenes/title/TitleScene.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
-run/main_scene="res://scenes/title/TitleScene.tscn"
 
 [autoload]
 
 GameState="*res://scripts/GameState.gd"
+DialogueDB="*res://scripts/DialogueDB.gd"
+SaveManager="*res://scripts/SaveManager.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

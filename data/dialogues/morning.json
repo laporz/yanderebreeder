@@ -1,0 +1,140 @@
+{
+  "scene": "morning",
+  "tiers": {
+    "0": {
+      "prompt": "どう話しかけますか？",
+      "outfit": "normal",
+      "choices": [
+        {
+          "id": "honest",
+          "label": "A: 気持ちを正直に伝える",
+          "outcome": "success",
+          "reply": "え…そんなこと言われたのははじめてです。……ありがとう。",
+          "expression": "shy"
+        },
+        {
+          "id": "greet",
+          "label": "B: おはようと声をかける",
+          "outcome": "normal",
+          "reply": "……おはようございます。",
+          "expression": "default"
+        },
+        {
+          "id": "weird",
+          "label": "C: 変なことを言ってしまう",
+          "outcome": "fail",
+          "reply": "…なんか変なこと言いませんでしたか、今。",
+          "expression": "surprised"
+        }
+      ]
+    },
+    "1": {
+      "prompt": "今日も話しかけてみよう。",
+      "outfit": "normal",
+      "choices": [
+        {
+          "id": "invite_tea",
+          "label": "A: 一緒にお茶しませんかと誘う",
+          "outcome": "success",
+          "reply": "……いいですよ。少しだけなら。",
+          "expression": "shy"
+        },
+        {
+          "id": "weather",
+          "label": "B: 今日の天気の話をする",
+          "outcome": "normal",
+          "reply": "そうですね、過ごしやすい気候です。",
+          "expression": "default"
+        },
+        {
+          "id": "ignore",
+          "label": "C: 話しかけるのをやめる",
+          "outcome": "fail",
+          "reply": "……もう行くんですか。",
+          "expression": "surprised"
+        }
+      ]
+    },
+    "2": {
+      "prompt": "すっかり慣れてきた。今日は何を話そうか。",
+      "outfit": "normal",
+      "choices": [
+        {
+          "id": "compliment",
+          "label": "A: 笑顔が素敵だと伝える",
+          "outcome": "success",
+          "reply": "……もう、そういうことを言うんだから。",
+          "expression": "happy"
+        },
+        {
+          "id": "daily",
+          "label": "B: 今日の予定を話す",
+          "outcome": "normal",
+          "reply": "そうなんですね。楽しそう。",
+          "expression": "happy"
+        },
+        {
+          "id": "blunt",
+          "label": "C: 無愛想な返事をする",
+          "outcome": "fail",
+          "reply": "……ふうん。",
+          "expression": "default"
+        }
+      ]
+    },
+    "3": {
+      "prompt": "気持ちが高ぶっている。うまく伝えられるか？",
+      "outfit": "normal",
+      "choices": [
+        {
+          "id": "feelings",
+          "label": "A: 好きだと伝える",
+          "outcome": "success",
+          "reply": "……わかってる。私も、あなたのことが好きよ。",
+          "expression": "shy"
+        },
+        {
+          "id": "normal_talk",
+          "label": "B: 普通に会話する",
+          "outcome": "normal",
+          "reply": "うん、今日も一緒にいられてよかった。",
+          "expression": "happy"
+        },
+        {
+          "id": "distance",
+          "label": "C: 素っ気なく距離を置く",
+          "outcome": "fail",
+          "reply": "……どうしたの、急に。",
+          "expression": "surprised"
+        }
+      ]
+    },
+    "4": {
+      "prompt": "彼女はあなたのことだけを見ている。",
+      "outfit": "normal",
+      "choices": [
+        {
+          "id": "forever",
+          "label": "A: ずっと一緒にいようと言う",
+          "outcome": "success",
+          "reply": "……うん。私もそう思ってた。絶対に、ずっと一緒よ。",
+          "expression": "happy"
+        },
+        {
+          "id": "today",
+          "label": "B: 今日も会えてよかったと言う",
+          "outcome": "normal",
+          "reply": "私も。あなたに会えるたびに、幸せだって思う。",
+          "expression": "happy"
+        },
+        {
+          "id": "hesitate",
+          "label": "C: 少し躊躇して黙ってしまう",
+          "outcome": "fail",
+          "reply": "……どうしたの？私、何かした？",
+          "expression": "surprised"
+        }
+      ]
+    }
+  }
+}

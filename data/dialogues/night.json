@@ -1,0 +1,140 @@
+{
+  "scene": "night",
+  "tiers": {
+    "0": {
+      "prompt": "夜も話しかけてみよう。",
+      "outfit": "pajama",
+      "choices": [
+        {
+          "id": "how_was_day",
+          "label": "A: 今日はどうだったか聞く",
+          "outcome": "success",
+          "reply": "……特に何もなかったです。でも、悪くはなかった。",
+          "expression": "default"
+        },
+        {
+          "id": "goodnight",
+          "label": "B: おやすみと声をかける",
+          "outcome": "normal",
+          "reply": "……おやすみなさい。",
+          "expression": "default"
+        },
+        {
+          "id": "awkward",
+          "label": "C: 気まずい沈黙になる",
+          "outcome": "fail",
+          "reply": "……何か言いたいことがあるなら、言ってください。",
+          "expression": "surprised"
+        }
+      ]
+    },
+    "1": {
+      "prompt": "夜の会話。少し打ち解けてきた。",
+      "outfit": "pajama",
+      "choices": [
+        {
+          "id": "stars",
+          "label": "A: 星がきれいだと話す",
+          "outcome": "success",
+          "reply": "……そうですね。こんなにきれいに見えるなんて、知らなかった。",
+          "expression": "happy"
+        },
+        {
+          "id": "sleep_well",
+          "label": "B: よく眠れているか聞く",
+          "outcome": "normal",
+          "reply": "ええ、まあ。ここは静かだから。",
+          "expression": "default"
+        },
+        {
+          "id": "blunt_night",
+          "label": "C: そっけなく振る舞う",
+          "outcome": "fail",
+          "reply": "……もう寝ます。",
+          "expression": "default"
+        }
+      ]
+    },
+    "2": {
+      "prompt": "夜の語らい。",
+      "outfit": "pajama",
+      "choices": [
+        {
+          "id": "elven_world",
+          "label": "A: エルフの世界の話を聞く",
+          "outcome": "success",
+          "reply": "エルフの里は、静かで美しい場所よ。……懐かしいな。",
+          "expression": "happy"
+        },
+        {
+          "id": "tomorrow",
+          "label": "B: 明日も一緒にいようと言う",
+          "outcome": "normal",
+          "reply": "ええ、もちろん。",
+          "expression": "happy"
+        },
+        {
+          "id": "tired",
+          "label": "C: 眠そうにする",
+          "outcome": "fail",
+          "reply": "……そんなに眠いなら、さっさと寝てください。",
+          "expression": "surprised"
+        }
+      ]
+    },
+    "3": {
+      "prompt": "夜の親密な時間。",
+      "outfit": "pajama",
+      "choices": [
+        {
+          "id": "beautiful",
+          "label": "A: きれいだと伝える",
+          "outcome": "success",
+          "reply": "……もう、夜だから言えるんでしょ。ありがとう。",
+          "expression": "shy"
+        },
+        {
+          "id": "near",
+          "label": "B: そばにいてほしいと言う",
+          "outcome": "normal",
+          "reply": "……うん。ここにいるよ。",
+          "expression": "happy"
+        },
+        {
+          "id": "overthink",
+          "label": "C: 変に考えすぎてしまう",
+          "outcome": "fail",
+          "reply": "……何を考え込んでいるの？",
+          "expression": "surprised"
+        }
+      ]
+    },
+    "4": {
+      "prompt": "夜、二人きりの時間。",
+      "outfit": "pajama",
+      "choices": [
+        {
+          "id": "love",
+          "label": "A: 愛していると言う",
+          "outcome": "success",
+          "reply": "……私も。あなただけよ。ずっと、ずっとそばにいる。",
+          "expression": "happy"
+        },
+        {
+          "id": "hold",
+          "label": "B: そっと手を握る",
+          "outcome": "normal",
+          "reply": "……温かい。このまま、いよう。",
+          "expression": "happy"
+        },
+        {
+          "id": "look_away",
+          "label": "C: 目を逸らしてしまう",
+          "outcome": "fail",
+          "reply": "……なんで、そっぽを向くの。",
+          "expression": "surprised"
+        }
+      ]
+    }
+  }
+}
